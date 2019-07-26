@@ -97,10 +97,13 @@ function createartboard() {
             selection.insertionParent.addChild(artboard);
         } else {
             for (var i = 0; i < selCount; i++) {
-                console.log(sel[i].name);
-                sel[i].width = width;
-                sel[i].height = height;
-                sel[i].name = name + " " + i;
+                if (sel[i] instanceof Artboard) {
+                    sel[i].width = width;
+                    sel[i].height = height;
+                    sel[i].name = name + " " + i;
+                }
+                console.log("Select an Artboard");
+
             }
 
 
