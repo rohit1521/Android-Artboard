@@ -8,10 +8,20 @@ function createartboard() {
                 font-weight: 200;
             }
             title {
+                font-family: Roboto;
+                color: #2680EB;
                 display: block;
                 text-align: center;
                 font-size: 20px;
+                font-weight: medium;
                 margin-bottom: 20px;
+            }
+            
+
+
+            li{
+                margin-left: 10px;
+                
             }
             label.row > span {
                 color: #8E8E8E;
@@ -23,16 +33,16 @@ function createartboard() {
             }
         </style>
         <form method="dialog" id="main">
-            <title class="title">Android Artboard</title>
-            <p class = "textValue">If you selected an artboard then it will change to android artbaord </p>
+            <title class="title">Select Device</title>
+            <div class="tab">
             <div class="row break">
                 <label class="row">
                 <span>Select Model</span>
                 <select id="dropdown">
                     <option value="0" selected="selected >Google XL 3</option>
-                    <option value="0">Google XL 3</option>
-                    <option value="1">Google XL 2</option>
-                    <option value="2">Google XL 1</option>
+                    <option value="0">Pixel 3 XL</option>
+                    <option value="1">Pixel 2 XL</option>
+                    <option value="2">Pixel XL</option>
                     <option value="3">Galexy S8/s9</option>
                     <option value="4">Galaxy S7/Note5</option>
                 </select>
@@ -47,17 +57,17 @@ function createartboard() {
         items: [{
                 width: 411,
                 height: 822,
-                name: "Google XL 3"
+                name: "Pixel 3 XL"
             },
             {
                 width: 411,
                 height: 731,
-                name: "Google XL 2"
+                name: "Pixel 2 XL"
             },
             {
                 width: 411,
                 height: 731,
-                name: "Google XL"
+                name: "Pixel XL"
             },
             {
                 width: 360,
@@ -79,6 +89,7 @@ function createartboard() {
             Artboard,
             Color
         } = require("scenegraph")
+        let scenegraph = require("scenegraph");
         var e = document.getElementById("dropdown");
         const width = (data.items[e.options[e.selectedIndex].value]).width;
         const height = (data.items[e.options[e.selectedIndex].value]).height;
@@ -94,7 +105,10 @@ function createartboard() {
             artboard.height = height;
             artboard.name = name;
             artboard.fill = new Color(color);
+            var lastValue = scenegraph.root.children.length;
+            var lastArtboard = scenegraph.root.children.at(lastValue - 1);
             selection.insertionParent.addChild(artboard);
+            artboard.moveInParentCoordinates(lastArtboard.globalBounds.x + lastArtboard.width + 70, lastArtboard.globalBounds.y);
         } else {
             for (var i = 0; i < selCount; i++) {
                 if (sel[i] instanceof Artboard) {
