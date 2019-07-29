@@ -116,7 +116,7 @@ function createartboard() {
                     sel[i].height = height;
                     sel[i].name = name + " " + i;
                 }
-                console.log("Select an Artboard");
+                console.log(scenegraph);
 
             }
 
