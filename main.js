@@ -9,7 +9,6 @@ function createartboard() {
             }
             title {
                 font-family: Roboto;
-                color: #2680EB;
                 display: block;
                 text-align: center;
                 font-size: 20px;

@@ -5,15 +5,10 @@
         "app": "XD",
         "minVersion": "13.0.0"
     },
-    "version": "0.1.0",
+    "version": "0.0.2",
     "description": "This is an easy plugin to generate different android screen sized artboard. Now you don't need to remember the values",
     "summary": "Android screensize artboards",
-    "releaseNotes": ["Update 0.1.0 ",
-        "- Selected Artbaord get resized",
-        "- New Artboard create if none is selected",
-        "- Artboard Overlay Fixed",
-        "- Few performance improvement"
-    ],
+    "releaseNotes": "Update 0.1.0: -\n -Resize Artboard if selected \n -Generate new artboard if none selected \n - Artbaord overlap fixed",
     "keywords": [
         "android",
         "productivity",
@@ -29,7 +24,7 @@
         "fr"
     ],
     "author": "Rohith R",
-    "helpUrl": "https://github.com/rohit1521/Android-Artboard",
+    "helpUrl": "https://www.rohitkrishna.com",
     "icons": [{
             "width": 24,
             "height": 24,
